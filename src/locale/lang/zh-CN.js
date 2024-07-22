@@ -1,5 +1,5 @@
 export default {
-  homepage:'首页',
+  homepage: '首页',
   home: '首页',
   login: '登录',
   components: '组件',
@@ -40,8 +40,13 @@ export default {
   params: '动态路由',
   cropper_page: '图片裁剪',
   message_page: '消息中心',
-  power_sys_test: '动力系统评测',
   org_tree_page: '组织结构树',
   drag_drawer_page: '可拖动抽屉',
-  tree_select_page: '树状下拉选择器'
+  tree_select_page: '树状下拉选择器',
+  //
+  power_sys_test: '动力系统评测',
+  puxi: '谱系可视化',
+  setting: '指标的修改与说明',
+  introduction: '简介',
+  power_sys_choose: '动力系统选型'
 }

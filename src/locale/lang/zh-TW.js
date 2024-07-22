@@ -1,5 +1,5 @@
 export default {
-  homepage:'首頁',
+  homepage: '首頁',
   home: '首頁',
   login: '登錄',
   components: '组件',
@@ -40,8 +40,13 @@ export default {
   params: '動態路由',
   cropper_page: '圖片裁剪',
   message_page: '消息中心',
-  power_sys_test: '動力系統評測',
   org_tree_page: '組織結構樹',
   drag_drawer_page: '可拖動抽屜',
-  tree_select_page: '樹狀下拉選擇器'
+  tree_select_page: '樹狀下拉選擇器',
+  //
+  power_sys_test: '動力系統評測',
+  puxi: '譜系可視化',
+  setting: '指標的修改與說明',
+  introduction: '簡介',
+  power_sys_choose: '動力系統選型'
 }

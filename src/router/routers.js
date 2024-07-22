@@ -28,16 +28,6 @@ export default [
     component: () => import('@/view/login/login.vue')
   },
   {
-    path: '/homepage',
-    name: 'homepage',
-    meta: {
-      title: 'Home - 主页',
-      hideInMenu: false,
-      icon: 'ios-book'
-    },
-    component: () => import('@/view/login/homepage.vue')
-  },
-  {
     path: '/',
     name: '_home',
     redirect: '/home',
@@ -57,6 +47,26 @@ export default [
           icon: 'md-home'
         },
         component: () => import('@/view/single-page/home')
+      }
+    ]
+  },
+  {
+    path: '/components',
+    name: 'components6',
+    meta: {
+      hideInBread: true
+    },
+    component: Main,
+    children: [
+      {
+        path: '/homepage',
+        name: 'homepage',
+        meta: {
+          title: 'Home - 主页',
+          hideInMenu: false,
+          icon: 'ios-book'
+        },
+        component: () => import('@/view/home/homepage.vue')
       }
     ]
   },
@@ -112,58 +122,50 @@ export default [
   },
   {
     path: '/components',
+    name: 'components4',
+    meta: {
+      hideInBread: true
+    },
+    component: Main,
+    children: [
+      {
+        path: 'introduction',
+        name: 'introduction',
+        meta: {
+          icon: 'md-git-branch',
+          title: '简介'
+        },
+        component: () => import('@/view/components/introduction/index.vue')
+      }
+    ]
+  },
+  {
+    path: '/components',
+    name: 'components3',
+    meta: {
+      hideInBread: true
+    },
+    component: Main,
+    children: [
+      {
+        path: 'setting',
+        name: 'setting',
+        meta: {
+          icon: 'md-git-branch',
+          title: '指标的修改与说明'
+        },
+        component: () => import('@/view/components/setting/index.vue')
+      }
+    ]
+  },
+  {
+    path: '/components',
     name: 'components',
     meta: {
       hideInBread: true
     },
     component: Main,
     children: [
-      // {
-      //   path: 'tree_select_page',
-      //   name: 'tree_select_page',
-      //   meta: {
-      //     icon: 'md-arrow-dropdown-circle',
-      //     title: '树状下拉选择器',
-      //     hideInMenu: true
-      //   },
-      //   component: () => import('@/view/components/tree-select/index.vue')
-      // },
-      // {
-      //   path: 'count_to_page',
-      //   name: 'count_to_page',
-      //   meta: {
-      //     icon: 'md-trending-up',
-      //     title: '数字渐变'
-      //   },
-      //   component: () => import('@/view/components/count-to/count-to.vue')
-      // },
-      // {
-      //   path: 'drag_list_page',
-      //   name: 'drag_list_page',
-      //   meta: {
-      //     icon: 'ios-infinite',
-      //     title: '拖拽列表'
-      //   },
-      //   component: () => import('@/view/components/drag-list/drag-list.vue')
-      // },
-      // {
-      //   path: 'drag_drawer_page',
-      //   name: 'drag_drawer_page',
-      //   meta: {
-      //     icon: 'md-list',
-      //     title: '可拖拽抽屉'
-      //   },
-      //   component: () => import('@/view/components/drag-drawer')
-      // },
-      // {
-      //   path: 'org_tree_page',
-      //   name: 'org_tree_page',
-      //   meta: {
-      //     icon: 'ios-people',
-      //     title: '组织结构树'
-      //   },
-      //   component: () => import('@/view/components/org-tree')
-      // },
       {
         path: 'power_sys_test',
         name: 'power_sys_test',
@@ -172,61 +174,45 @@ export default [
           title: '动力系统评测'
         },
         component: () => import('@/view/components/power-sys-test/index.vue')
-      },
-      // {
-      //   path: 'cropper_page',
-      //   name: 'cropper_page',
-      //   meta: {
-      //     icon: 'md-crop',
-      //     title: '图片裁剪'
-      //   },
-      //   component: () => import('@/view/components/cropper/cropper.vue')
-      // },
-      // {
-      //   path: 'tables_page',
-      //   name: 'tables_page',
-      //   meta: {
-      //     icon: 'md-grid',
-      //     title: '多功能表格'
-      //   },
-      //   component: () => import('@/view/components/tables/tables.vue')
-      // },
-      // {
-      //   path: 'split_pane_page',
-      //   name: 'split_pane_page',
-      //   meta: {
-      //     icon: 'md-pause',
-      //     title: '分割窗口'
-      //   },
-      //   component: () => import('@/view/components/split-pane/split-pane.vue')
-      // },
-      // {
-      //   path: 'markdown_page',
-      //   name: 'markdown_page',
-      //   meta: {
-      //     icon: 'logo-markdown',
-      //     title: 'Markdown编辑器'
-      //   },
-      //   component: () => import('@/view/components/markdown/markdown.vue')
-      // },
-      // {
-      //   path: 'editor_page',
-      //   name: 'editor_page',
-      //   meta: {
-      //     icon: 'ios-create',
-      //     title: '富文本编辑器'
-      //   },
-      //   component: () => import('@/view/components/editor/editor.vue')
-      // },
-      // {
-      //   path: 'icons_page',
-      //   name: 'icons_page',
-      //   meta: {
-      //     icon: '_bear',
-      //     title: '自定义图标'
-      //   },
-      //   component: () => import('@/view/components/icons/icons.vue')
-      // }
+      }
+    ]
+  },
+  {
+    path: '/components',
+    name: 'components5',
+    meta: {
+      hideInBread: true
+    },
+    component: Main,
+    children: [
+      {
+        path: 'power_sys_choose',
+        name: 'power_sys_choose',
+        meta: {
+          icon: 'md-git-branch',
+          title: '动力系统选型'
+        },
+        component: () => import('@/view/components/power-sys-choose/index.vue')
+      }
+    ]
+  },
+  {
+    path: '/components',
+    name: 'components2',
+    meta: {
+      hideInBread: true
+    },
+    component: Main,
+    children: [
+      {
+        path: 'puxi',
+        name: 'puxi',
+        meta: {
+          icon: 'md-git-branch',
+          title: '谱系可视化'
+        },
+        component: () => import('@/view/components/puxi/index.vue')
+      }
     ]
   },
   {

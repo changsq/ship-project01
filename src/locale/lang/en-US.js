@@ -1,5 +1,5 @@
 export default {
-  homepage:'Home',
+  homepage: 'Home',
   home: 'Home',
   login: 'Login',
   components: 'Components',
@@ -40,8 +40,13 @@ export default {
   params: 'Params',
   cropper_page: 'Cropper',
   message_page: 'Message Center',
-  power_sys_test: 'Power System Evaluation',
   org_tree_page: 'Org Tree',
   drag_drawer_page: 'Draggable Drawer',
-  tree_select_page: 'Tree Selector'
+  tree_select_page: 'Tree Selector',
+  //
+  power_sys_test: 'Power System Evaluation',
+  puxi: 'Lineage Visualization',
+  setting: 'Modification and Description of Indicators',
+  introduction: 'Introduction',
+  power_sys_choose: 'Power System Selection'
 }

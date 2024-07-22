@@ -46,7 +46,6 @@ export const getMenuByRouter = (list, access) => {
       if (showThisMenuEle(item, access)) res.push(obj)
     }
   })
-  console.log(res);
   return res
 }
 
@@ -76,7 +75,7 @@ export const getBreadCrumbList = (route, homeRoute) => {
   res = res.filter(item => {
     return !item.meta.hideInMenu
   })
-  return res   //面包屑隐藏首页了
+  return res // 面包屑隐藏首页了
 }
 
 export const getRouteTitleHandled = (route) => {
@@ -123,7 +122,7 @@ export const getTagNavListFromLocalstorage = () => {
  * @param {Array} routers 路由列表数组
  * @description 用于找到路由列表中name为home的对象
  */
-export const getHomeRoute = (routers, homeName = 'home') => {
+export const getHomeRoute = (routers, homeName = 'homepage') => {
   let i = -1
   let len = routers.length
   let homeRoute = {}

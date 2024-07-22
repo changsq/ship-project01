@@ -5,14 +5,14 @@ const USER_MAP = {
     user_id: '1',
     access: ['super_admin', 'admin'],
     token: 'super_admin',
-    avatar: 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png'
+    avatar: 'https://img0.baidu.com/it/u=1176658812,3157856938&fm=253&fmt=auto&app=138&f=JPEG?w=300&h=300'
   },
   admin: {
     name: 'admin',
     user_id: '2',
     access: ['admin'],
     token: 'admin',
-    avatar: 'https://avatars0.githubusercontent.com/u/20942571?s=460&v=4'
+    avatar: 'https://img0.baidu.com/it/u=1533283216,4234417763&fm=253&fmt=auto&app=138&f=JPEG?w=300&h=300'
   }
 }
 

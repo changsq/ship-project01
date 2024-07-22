@@ -15,7 +15,7 @@
       </Input>
     </FormItem>
     <a-checkbox class="cb1" v-model="checked">显示密码</a-checkbox>
-    <a-checkbox class="cb2" v-model="autoLogin">保持登录</a-checkbox>
+    <a-checkbox v-show="false" class="cb2" v-model="autoLogin">保持登录</a-checkbox>
     <FormItem style="padding-top: 20px;">
       <Button @click="handleSubmit" type="primary" long>登录</Button>
     </FormItem>
@@ -66,8 +66,10 @@ export default {
         if (valid) {
           this.$emit('on-success-valid', {
             userName: this.form.userName,
-            password: this.form.password
-          })
+            password: this.form.password,
+            autoLogin: this.autoLogin
+          });
+
         }
       })
     }

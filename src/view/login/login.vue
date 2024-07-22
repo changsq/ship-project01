@@ -38,7 +38,7 @@ import { reactive, computed } from 'vue'
 export default {
   components: {
     LoginForm,
-    Button,
+    Button
   },
   methods: {
     ...mapActions([
@@ -50,10 +50,10 @@ export default {
         this.getUserInfo().then(res => {
           this.$router.push({
             name: this.$config.homeName
-           })
+          })
         })
       })
-     }
+    }
   }
 }
 </script>

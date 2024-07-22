@@ -13,12 +13,11 @@
 
 export default {
   name: 'introduction',
-  components:{
-    
-  },
+  components: {
 
+  }
 
-};
+}
 </script>
 
 <style scoped>

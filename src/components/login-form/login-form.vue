@@ -44,8 +44,8 @@ export default {
   },
   data () {
     return {
-      checked:false,
-      autoLogin:false,
+      checked: false,
+      autoLogin: false,
       form: {
         userName: 'admin',
         password: ''
@@ -68,8 +68,7 @@ export default {
             userName: this.form.userName,
             password: this.form.password,
             autoLogin: this.autoLogin
-          });
-
+          })
         }
       })
     }

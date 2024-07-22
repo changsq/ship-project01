@@ -29,25 +29,25 @@
 </template>
 
 <script>
-import Chart from './chart.vue';
-import Route from './route.vue';
+import Chart from './chart.vue'
+import Route from './route.vue'
 
 export default {
   name: 'puxi',
-  components:{
+  components: {
     Chart,
     Route
   },
 
   methods: {
-    showRoute(){
-      this.$refs.route.show();
+    showRoute () {
+      this.$refs.route.show()
     },
-    showChart(){
-      this.$refs.chart.show();
-    },
+    showChart () {
+      this.$refs.chart.show()
+    }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -83,8 +83,8 @@ export default {
   margin-top: 5px;
 }
 .card-image{
-  max-width: 100%; 
+  max-width: 100%;
   height: auto;
-  object-fit: cover; 
+  object-fit: cover;
 }
 </style>

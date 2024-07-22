@@ -59,21 +59,21 @@
 </template>
 
 <script>
-import { watch } from 'vue';
+import { watch } from 'vue'
 
 export default {
   name: 'setting',
-  components:{
-    
+  components: {
+
   },
 
-  data() {
+  data () {
     return {
-      modification:"1",
-      imageSrc:'@/assets/images/math1.jpg'
-    };
-  },
-};
+      modification: '1',
+      imageSrc: '@/assets/images/math1.jpg'
+    }
+  }
+}
 </script>
 
 <style scoped>

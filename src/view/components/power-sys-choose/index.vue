@@ -76,7 +76,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       visible: false,
       formData: {
@@ -100,18 +100,18 @@ export default {
     }
   },
   methods: {
-    handleClick() {
-      this.checkedValue = !this.checkedValue;
+    handleClick () {
+      this.checkedValue = !this.checkedValue
     },
-    show() {
-      this.visible = true;
+    show () {
+      this.visible = true
     },
-    selectAll() {
+    selectAll () {
       this.items.forEach(item => {
-        item.isEditable = true;
-      });
+        item.isEditable = true
+      })
     },
-    handleClear() {
+    handleClear () {
       // 重置所有表单项的值
       this.formData = {
         waters: '',
@@ -122,11 +122,11 @@ export default {
         blockCoefficient: null,
         hullEfficiency: null,
         depth: null
-      };
+      }
       this.items.forEach(item => {
-        item.isEditable = false;
-        item.value = null;
-      });
+        item.isEditable = false
+        item.value = null
+      })
     }
   }
 }

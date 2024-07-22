@@ -19,16 +19,16 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      visible: false,
+      visible: false
     }
   },
   methods: {
-    show() {
-      this.visible = true;
+    show () {
+      this.visible = true
     },
-    Oncancel(){
+    Oncancel () {
       this.visible = false
     }
   }
@@ -38,9 +38,9 @@ export default {
 <style scoped>
 
 .route-image{
-  max-width: 100%; 
+  max-width: 100%;
   height: auto;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 </style>

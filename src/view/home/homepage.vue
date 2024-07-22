@@ -10,7 +10,7 @@
         <Button class="hbutton1" type="primary" size="large" @click="showPuxi">谱系可视化</Button>
         <Button class="hbutton1" type="primary" size="large" @click="showSetting">系统配置</Button>
       </div>
-  </div>  
+  </div>
 </template>
 
 <script>
@@ -20,12 +20,12 @@ import { Button } from 'ant-design-vue'
 export default {
   components: {
     LoginForm,
-    Button,
+    Button
   },
   computed: {
     userAvatar () {
       return this.$store.state.user.avatarImgPath
-    },
+    }
   },
   methods: {
     ...mapActions([
@@ -46,36 +46,36 @@ export default {
           break
       }
     },
-     showIntro(){
+    showIntro () {
       const introduction = 'introduction'
       this.$router.push({ name: introduction })
-     },
-     showPST(){
+    },
+    showPST () {
       const power_sys_test = 'power_sys_test'
       this.$router.push({ name: power_sys_test })
-     },
-     showPSC(){
+    },
+    showPSC () {
       const introduction = 'introduction'
       this.$router.push({ name: introduction })
-     },
-     showPuxi(){
+    },
+    showPuxi () {
       const puxi = 'puxi'
       this.$router.push({ name: puxi })
-     },
-     showSetting(){
+    },
+    showSetting () {
       const setting = 'setting'
       this.$router.push({ name: setting })
-     }
+    }
   }
 }
 </script>
 <style scoped>
 .login1 {
-    height: 100vh; 
+    height: 100vh;
     background-image: url('../../assets/images/login-bg.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     position: relative;
 }
 .div1{
@@ -83,9 +83,9 @@ export default {
     display: flex;
 }
 .mtitle1{
-    text-align: center; 
-    padding-top: 5%; 
-    font-size: xx-large; 
+    text-align: center;
+    padding-top: 5%;
+    font-size: xx-large;
     font-weight: 1000;
 }
 .hbutton1{

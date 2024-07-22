@@ -1,10 +1,10 @@
 <template>
     <div>
       <a-form :model="form" ref="form" @submit="handleSubmit" class="div1">
-        <a-form-item 
-          label="动力装置" 
-          class="div2" 
-          :validateStatus="errors.powerUnit ? 'error' : ''" 
+        <a-form-item
+          label="动力装置"
+          class="div2"
+          :validateStatus="errors.powerUnit ? 'error' : ''"
           :help="errors.powerUnit"
         >
           <a-select v-model="form.powerUnit" size="large" class="select1">
@@ -13,10 +13,10 @@
             <a-select-option value="2">2</a-select-option>
           </a-select>
         </a-form-item>
-        <a-form-item 
-          label="齿轮箱" 
-          class="div2" 
-          :validateStatus="errors.gearbox ? 'error' : ''" 
+        <a-form-item
+          label="齿轮箱"
+          class="div2"
+          :validateStatus="errors.gearbox ? 'error' : ''"
           :help="errors.gearbox"
         >
           <a-select v-model="form.gearbox" size="large" class="select1">
@@ -25,10 +25,10 @@
             <a-select-option value="2">2</a-select-option>
           </a-select>
         </a-form-item>
-        <a-form-item 
-          label="轴系" 
-          class="div2" 
-          :validateStatus="errors.shafting ? 'error' : ''" 
+        <a-form-item
+          label="轴系"
+          class="div2"
+          :validateStatus="errors.shafting ? 'error' : ''"
           :help="errors.shafting"
         >
           <a-select v-model="form.shafting" size="large" class="select1">
@@ -37,10 +37,10 @@
             <a-select-option value="2">2</a-select-option>
           </a-select>
         </a-form-item>
-        <a-form-item 
-          label="螺旋桨" 
-          class="div2" 
-          :validateStatus="errors.propeller ? 'error' : ''" 
+        <a-form-item
+          label="螺旋桨"
+          class="div2"
+          :validateStatus="errors.propeller ? 'error' : ''"
           :help="errors.propeller"
         >
           <a-select v-model="form.propeller" size="large" class="select1">
@@ -68,10 +68,10 @@
 
 export default {
   name: 'power_sys_test',
-  components:{
+  components: {
 
   },
-  data() {
+  data () {
     return {
       form: {
         powerUnit: '',
@@ -82,23 +82,23 @@ export default {
       errors: {},
       data: [],
       columns: [
-        { title: '动力装置', dataIndex: 'powerUnit', key: 'powerUnit',width: '20%',align: 'center'},
-        { title: '齿轮箱', dataIndex: 'gearbox', key: 'gearbox',width: '20%',align: 'center' },
-        { title: '轴系', dataIndex: 'shafting', key: 'shafting',width: '20%' ,align: 'center'},
-        { title: '螺旋桨', dataIndex: 'propeller', key: 'propeller',width: '20%' ,align: 'center'},
-        { 
-          title: '操作', 
-          key: 'action', 
+        { title: '动力装置', dataIndex: 'powerUnit', key: 'powerUnit', width: '20%', align: 'center' },
+        { title: '齿轮箱', dataIndex: 'gearbox', key: 'gearbox', width: '20%', align: 'center' },
+        { title: '轴系', dataIndex: 'shafting', key: 'shafting', width: '20%', align: 'center' },
+        { title: '螺旋桨', dataIndex: 'propeller', key: 'propeller', width: '20%', align: 'center' },
+        {
+          title: '操作',
+          key: 'action',
           align: 'center',
           width: '100px',
-          scopedSlots: { customRender: 'action',width: '20%' ,align: 'center'}
+          scopedSlots: { customRender: 'action', width: '20%', align: 'center' }
         }
       ]
-    };
+    }
   },
   methods: {
-    handleSubmit(e) {
-      e.preventDefault();
+    handleSubmit (e) {
+      e.preventDefault()
       if (this.validateForm()) {
         this.data.push({
           id: Date.now(),
@@ -106,52 +106,52 @@ export default {
           gearbox: this.form.gearbox,
           shafting: this.form.shafting,
           propeller: this.form.propeller
-        });
+        })
         // 清空表单
-        this.resetErrors();
+        this.resetErrors()
       }
     },
-    handleTest(){
-      this.$refs.TestRef.show();
+    handleTest () {
+      this.$refs.TestRef.show()
     },
-    validateForm() {
-      this.errors = {};
-      let valid = true;
+    validateForm () {
+      this.errors = {}
+      let valid = true
 
       if (!this.form.powerUnit) {
-        this.errors.powerUnit = '请选择动力装置';
-        valid = false;
+        this.errors.powerUnit = '请选择动力装置'
+        valid = false
       }
       if (!this.form.gearbox) {
-        this.errors.gearbox = '请选择齿轮箱';
-        valid = false;
+        this.errors.gearbox = '请选择齿轮箱'
+        valid = false
       }
       if (!this.form.shafting) {
-        this.errors.shafting = '请选择轴系';
-        valid = false;
+        this.errors.shafting = '请选择轴系'
+        valid = false
       }
       if (!this.form.propeller) {
-        this.errors.propeller = '请选择螺旋桨';
-        valid = false;
+        this.errors.propeller = '请选择螺旋桨'
+        valid = false
       }
 
-      return valid;
+      return valid
     },
-    resetErrors(){
-      this.errors = {};
+    resetErrors () {
+      this.errors = {}
     },
-    resetForm() {
+    resetForm () {
       this.form = {
         powerUnit: '',
         gearbox: '',
         shafting: '',
         propeller: ''
-      };
-      this.errors = {};
-      this.data = [];
+      }
+      this.errors = {}
+      this.data = []
     }
   }
-};
+}
 </script>
 
 <style scoped>

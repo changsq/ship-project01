@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     userAvatar () {
-      return this.$store.state.user.avatarImgPath
+      return 'https://bpic.588ku.com/element_origin_min_pic/01/48/78/4157443e37c196f.jpg'
     }
   },
   methods: {
@@ -32,10 +32,10 @@ export default {
       'handleLogOut'
     ]),
     logout () {
-      this.handleLogOut().then(() => {
+      // this.handleLogOut().then(() => {
         this.$router.push({
           name: 'login'
-        })
+        // })
       })
     },
     handleClick (name) {
@@ -55,8 +55,8 @@ export default {
       this.$router.push({ name: power_sys_test })
     },
     showPSC () {
-      const introduction = 'introduction'
-      this.$router.push({ name: introduction })
+      const power_sys_choose = 'power_sys_choose'
+      this.$router.push({ name: power_sys_choose })
     },
     showPuxi () {
       const puxi = 'puxi'

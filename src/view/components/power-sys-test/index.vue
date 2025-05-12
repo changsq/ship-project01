@@ -1,5 +1,16 @@
 <template>
+  <content>
+    <PowerTest ref="TestRef"/>
     <div>
+      <a-modal v-model="open" title="评估结果" :footer="null">
+        <p>..........</p>
+        <p>..........</p>
+        <p>..........</p>
+        <div style="margin-left: 65%;">
+          <a-button>取消</a-button>
+          <a-button type="primary" style="margin-left: 20px;">确认</a-button>
+        </div>
+      </a-modal>
       <a-form :model="form" ref="form" @submit="handleSubmit" class="div1">
         <a-form-item
           label="动力装置"
@@ -57,19 +68,25 @@
         </a-form-item>
       </a-form>
       <a-table :columns="columns" :dataSource="data" rowKey="id" >
+        <template slot="checked" slot-scope="text, record">
+          <a-checkbox v-model="record.checked"></a-checkbox>
+        </template>
         <template slot="action" slot-scope="text, record">
-          <a-button type="danger" @click="handleTest(record.id)">开始评估</a-button>
+          <a-button type="primary" @click="handleEdit(record.id)">编辑/添加参数</a-button>
         </template>
       </a-table>
+      <a-button style="margin-left: 94%;margin-top: 20px;" type="primary" @click="handleTest">开始评估</a-button>
     </div>
+  </content>
 </template>
 
 <script>
+import PowerTest from './PowerTest.vue'
 
 export default {
   name: 'power_sys_test',
   components: {
-
+    PowerTest
   },
   data () {
     return {
@@ -79,20 +96,29 @@ export default {
         shafting: '',
         propeller: ''
       },
+      open:false,
       errors: {},
       data: [],
       columns: [
-        { title: '动力装置', dataIndex: 'powerUnit', key: 'powerUnit', width: '20%', align: 'center' },
-        { title: '齿轮箱', dataIndex: 'gearbox', key: 'gearbox', width: '20%', align: 'center' },
-        { title: '轴系', dataIndex: 'shafting', key: 'shafting', width: '20%', align: 'center' },
-        { title: '螺旋桨', dataIndex: 'propeller', key: 'propeller', width: '20%', align: 'center' },
+        {
+          title: '',
+          key: 'checked',
+          align: 'center',
+          width: '10px',
+          scopedSlots: { customRender: 'checked', width: '5%', align: 'center' }
+        },
+        { title: '动力装置', dataIndex: 'powerUnit', key: 'powerUnit', width: '16%', align: 'center' },
+        { title: '齿轮箱', dataIndex: 'gearbox', key: 'gearbox', width: '16%', align: 'center' },
+        { title: '轴系', dataIndex: 'shafting', key: 'shafting', width: '16%', align: 'center' },
+        { title: '螺旋桨', dataIndex: 'propeller', key: 'propeller', width: '16%', align: 'center' },
         {
           title: '操作',
           key: 'action',
           align: 'center',
           width: '100px',
-          scopedSlots: { customRender: 'action', width: '20%', align: 'center' }
-        }
+          scopedSlots: { customRender: 'action', width: '16%', align: 'center' }
+        },
+       
       ]
     }
   },
@@ -105,13 +131,17 @@ export default {
           powerUnit: this.form.powerUnit,
           gearbox: this.form.gearbox,
           shafting: this.form.shafting,
-          propeller: this.form.propeller
+          propeller: this.form.propeller,
+          checked: false 
         })
         // 清空表单
         this.resetErrors()
       }
     },
-    handleTest () {
+    handleTest(){
+      this.open=true
+    },
+    handleEdit () {
       this.$refs.TestRef.show()
     },
     validateForm () {

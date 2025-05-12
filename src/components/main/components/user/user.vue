@@ -3,8 +3,9 @@
     <Dropdown @on-click="handleClick">
       <Badge>
         <Avatar :src="userAvatar"/>
+        <!-- <a style="color: white;">{{ userAvatar }}</a> -->
       </Badge>
-      <Icon :size="18" type="md-arrow-dropdown"></Icon>
+      <Icon :size="18" color="white" type="ios-arrow-down"></Icon>
       <DropdownMenu slot="list">
         <DropdownItem name="logout">退出登录</DropdownItem>
       </DropdownMenu>
@@ -32,10 +33,12 @@ export default {
       'handleLogOut'
     ]),
     logout () {
-      this.handleLogOut().then(() => {
+      // this.handleLogOut().then(() => {
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('id');
         this.$router.push({
           name: 'login'
-        })
+        // })
       })
     },
     message () {
